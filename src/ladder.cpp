@@ -48,7 +48,7 @@ bool is_adjacent(const string& word1, const string& word2) {
             if (difference > 1) { return false; }
         }
     }
-    return (difference == 1);
+    return (difference == 1 || difference == 0);
 }
 
 
@@ -104,7 +104,10 @@ void load_words(set<string> & word_list, const string& file_name) {
 
 void print_word_ladder(const vector<string>& ladder) {
     if (ladder.size() == 0) { cout << "No word ladder found." << endl; }
-    else { for (string word : ladder) { cout << word << " "; } }
+    else { 
+        for (string word : ladder) { cout << word << " "; } 
+        cout << endl;
+    }
 }
 
 void verify_word_ladder() {
